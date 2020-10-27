@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+
+{% for roulette in roulettes %}
+カテゴリー:{{ roulette.category }}
+タイトル{{ roulette.title }}
+コンテンツ{{ roulette.name }}
+
+{% endfor %}
+{% endblock  %}
