@@ -5,8 +5,9 @@
 
 {% for roulette in roulettes %}
 カテゴリー:{{ roulette.category }}
-タイトル{{ roulette.title }}
-コンテンツ{{ roulette.name }}
+タイトル:<a href="{% url 'destiny:roulette_detail' pk=roulette.pk %}">{{ roulette.title }}</a>
 
 {% endfor %}
+
+{% comment %} ランダムルーレット:<a class="btn btn-outline-secondary" href="{% url 'destiny:random' pk=roulette.pk %}">回す！</a> {% endcomment %}
 {% endblock  %}

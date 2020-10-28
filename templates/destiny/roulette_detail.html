@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+
+            <p>カテゴリー:{{ roulette.category }}</p>
+            <p>タイトル:{{ roulette.title }}</p>
+            {% for content in contents %}
+            <p>コンテンツ: {{ content.content_name }}</p>
+            {% endfor %}
+
+            <a class="btn btn-outline-secondary" href="{% url 'destiny:result' pk=roulette.pk %}">回す！</a>
+
+            <a class="btn btn-default" href="{% url 'destiny:roulette_update' pk=roulette.pk %}">編集</a>
+
+{% endblock  %}
