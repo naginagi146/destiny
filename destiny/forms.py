@@ -16,7 +16,7 @@ class RouletteCreateForm(forms.ModelForm):
 
 ContentFormset = forms.inlineformset_factory(
     Roulette, Content, fields ='__all__',
-    extra=2, max_num=10,
+    extra=10, max_num=10,
 )
 
 

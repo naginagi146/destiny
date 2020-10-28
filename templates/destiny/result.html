@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+
+        {% for content in contents %}
+            <h1>コンテンツ: {{ content.content_name }}</h1>
+        {% endfor %}
+
+        <a class="btn btn-outline-secondary" href="{% url 'destiny:roulette_detail' pk=roulette.pk %}">戻る</a>
+
+
+
+{% endblock  %}

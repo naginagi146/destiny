@@ -16,7 +16,7 @@ class Category(models.Model):
 class Roulette(models.Model):
 
     title = models.CharField(("タイトル"), max_length=50)
-    category = models.ForeignKey(Category, verbose_name=("カテゴリー"), on_delete=models.PROTECT)
+    category = models.ForeignKey(Category, verbose_name=("カテゴリー"), null=False, on_delete=models.PROTECT)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -32,7 +32,7 @@ class Roulette(models.Model):
 class Content(models.Model):
 
     content_name = models.CharField(("コンテンツ"), max_length=50)
-    roulette = models.ForeignKey(Roulette, verbose_name=("ルーレット"), on_delete=models.CASCADE)
+    roulette = models.ForeignKey(Roulette, verbose_name=("ルーレット"), null=False, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = ("コンテンツ")
